@@ -23,8 +23,8 @@ const makeIterator = (input) => {
 const array = ['a', 'b', 'c'];
 const greeting = 'abc';
 
-// const iterator = makeIterator(array);
-const iterator = makeIterator(greeting);
+const iterator = makeIterator(array);
+// const iterator = makeIterator(greeting);
 
 log(iterator.next())
 log(iterator.next())
