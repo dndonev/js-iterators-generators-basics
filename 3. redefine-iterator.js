@@ -41,4 +41,3 @@ const myIterableObject = addCustomIterator(person)
 for (const iterator of myIterableObject) {
 	log(iterator)
 }
-

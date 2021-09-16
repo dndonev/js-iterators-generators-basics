@@ -40,11 +40,19 @@ class BST {
         }
     }
 
-    *traverseInOrderRecursively(node) {
+    *traverseInOrderRecursivelyButIteratevly(node) {
         if (node) {
             yield* this.traverseInOrderRecursively(node.left);
             yield node.data;
             yield* this.traverseInOrderRecursively(node.right);
+        }
+    }
+
+    traverseInOrderRecursively(node) {
+        if (node) {
+            this.traverseInOrderRecursively(node.left);
+            console.log(node.data);
+            this.traverseInOrderRecursively(node.right);
         }
     }
 
@@ -79,10 +87,12 @@ tree.insertNode(3);
 tree.insertNode(1);
 tree.insertNode(5);
 
-const generator = tree.traverseInOrderRecursively(tree.root);
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
-console.log(generator.next());
+tree.traverseInOrderRecursively(tree.root);
+
+// const generator = tree.traverseInOrderRecursivelyButIteratevly(tree.root);
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
+// console.log(generator.next());
